@@ -1,0 +1,91 @@
+// FONTS LOAD SECTION
+@mixin font($fname, $fstyle, $fweight, $furl_woff2, $furl_woff) {
+  @font-face {
+    font-weight: $fweight;
+    font-family: $fname;
+    font-style: $fstyle;
+    // font-display: swap; // Uncomment to initially display system fonts
+    src: local($fname), url($furl_woff2) format("woff2"),
+      url($furl_woff) format("woff");
+      
+    // src: local($fname), url($furl_woff2) format("woff2"), local($fname),
+    // url($furl_woff) format("woff");
+  }
+  // src: local('Proxima Nova Extrabold'), local('Proxima-Nova-Extrabold'),
+}
+
+@include font(
+  "Proxima Nova",
+  normal,
+  900,
+  "../fonts/proxima_nova_extrabold.woff2",
+  "../fonts/proxima_nova_extrabold.woff"
+);
+
+// "../fonts/ProximaNova_ExtraBold.woff2",
+// "../fonts/ProximaNova_ExtraBold.woff"
+
+// @include font(
+//   "Roboto",
+//   italic,
+//   700,
+//   "../fonts/roboto-bolditalic-webfont.woff2"
+// );
+
+// USER VARIABLES SECTION
+
+$topbtn-bg-color: #ff3359;
+$nav-bg-color: #991d34;
+$nav-activebg-color: #ff3359;
+$h1-color: #ff3657;
+$h1-fz: 82px;
+$h1-lh: 1;
+$topbtn-color: #fff;
+
+$font-main: "Raleway", Arial, sans-serif;
+$fontweight-main: 600;
+$fontsize-main: 14px;
+$lineheight-main: 26px;
+$main-color--light: #0a0a0a;
+$main-color--dark: #fff;
+
+$font-footer: "Montserrat", Arial, sans-serif;
+$font-numbers: "Proxima Nova", Arial, sans-serif;
+
+// light
+$body_BG--light: #f3e4e4;
+$toggle--background--light: #fff;
+$toggle-active--background--light: rgba(78, 78, 78, 0.1);
+$search-BG--light: #fff;
+$search-BG--light: rgba(#fff, 1);
+
+// dark
+$body_BG--dark: #000;
+$toggle--background--dark: transparent;
+$toggle-border--dark: 1px solid rgba(255, 255, 255, 0.1);
+$toggle-active--background--dark: #4e4e4e;
+$search-BG--dark: rgba(#9e9e9e, 0.1);
+
+// $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+// $roboto: Roboto, "Roboto", "PT Sans", "Helvetica", sans-serif; // Roboto Font Family
+
+// // Bootstrap compatible gutter variable => $gutter
+// $grid-gutter-width: 20px;
+// $gutter: $grid-gutter-width;
+
+@mixin use-font($font-family, $font-weight, $font-style: "normal") {
+  font-weight: $font-weight;
+  font-family: $font-family;
+  font-style: $font-style;
+}
+@mixin use-font-sizes($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+// IMPORT SECTION
+
+// @import "node_modules/bootstrap/scss/bootstrap-reboot.scss"; // Bootstrap Reboot collection
+// @import "node_modules/bootstrap/scss/mixins/_breakpoints.scss"; // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
